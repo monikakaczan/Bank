@@ -29,5 +29,10 @@ describe BankAccount do
     allow(Time).to receive(:now).and_return(@date)
   end
 
+  it "prints today's date on deposit" do
+    bank_account= BankAccount.new
+    bank_account.add_deposit(150)
+    expect(bank_account.date_of_deposit).to eq(Date.today.to_s)
+  end
 
 end
