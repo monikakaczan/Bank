@@ -7,7 +7,7 @@ class BankAccount
   end
 
   def add_deposit(amount)
-    return @statement + amount
+     @statement += amount
   end
 
 end
