@@ -11,16 +11,23 @@ describe BankAccount do
     expect(bank_account.add_deposit(1)).to eq 1
   end
 
-  it "adds 500 pounds to the bank account if customer deposits 500 pounds" do
+  it "adds deposit of 500 to the statement when the current statement is 1 pound" do
     bank_account = BankAccount.new
     bank_account.add_deposit(1)
     bank_account.add_deposit(500)
     expect(bank_account.statement).to eq 501
   end
 
-  it "deduct 1 pound from the bank account if customer withdraws 1 pound" do
+  it "deducts 1 pound from the bank account if customer withdraws 1 pound" do
     bank_account = BankAccount.new
     bank_account.add_deposit(50)
     expect(bank_account.deduct_from_statement(1)).to eq 49
   end
+
+  it "prints today's date" do
+    date=Time.now
+    allow(Time).to receive(:now).and_return(@date)
+  end
+
+
 end
