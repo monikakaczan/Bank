@@ -10,4 +10,8 @@ class BankAccount
      @statement += amount
   end
 
+  def deduct_from_statement(amount)
+    @statement -= amount
+  end 
+
 end
